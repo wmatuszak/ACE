@@ -199,7 +199,11 @@ namespace ACE.Server.Factories
                     player.UntrainSkill((Skill)i, 0);
             }
 
-            var isDualWieldTrainedOrSpecialized = player.Skills[Skill.DualWield].AdvancementClass > SkillAdvancementClass.Untrained;
+            bool isDualWieldTrainedOrSpecialized;
+            if (Common.ConfigManager.Config.Server.DatFilesClassic)
+                isDualWieldTrainedOrSpecialized = false;
+            else
+                isDualWieldTrainedOrSpecialized = player.Skills[Skill.DualWield].AdvancementClass > SkillAdvancementClass.Untrained;
 
             // Set Heritage based Melee and Ranged Masteries
             GetMasteries(player.HeritageGroup, out WeaponType meleeMastery, out WeaponType rangedMastery);

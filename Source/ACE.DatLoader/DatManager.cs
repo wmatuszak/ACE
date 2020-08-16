@@ -49,7 +49,8 @@ namespace ACE.DatLoader
             {
                 datFile = Path.Combine(datDir, "client_portal.dat");
                 PortalDat = new PortalDatDatabase(datFile, keepOpen);
-                PortalDat.SkillTable.AddRetiredSkills();
+                if(!Common.ConfigManager.Config.Server.DatFilesClassic)
+                    PortalDat.SkillTable.AddRetiredSkills();
                 count = PortalDat.AllFiles.Count;
                 log.Info($"Successfully opened {datFile} file, containing {count} records, iteration {PortalDat.Iteration}");
                 if (PortalDat.Iteration != ITERATION_PORTAL)
