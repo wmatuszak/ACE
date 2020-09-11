@@ -69,6 +69,15 @@ namespace ACE.Server.Network.Handlers
                 }
             });
 
+            if (Common.ConfigManager.Config.Server.DatFilesClassic)
+            {
+                if (characterCreateInfo.Heritage != (int)HeritageGroup.Aluvian && characterCreateInfo.Heritage != (int)HeritageGroup.Gharundim && characterCreateInfo.Heritage != (int)HeritageGroup.Sho && characterCreateInfo.Heritage != (int)HeritageGroup.Viamontian)
+                {
+                    SendCharacterCreateResponse(session, CharacterGenerationVerificationResponse.Pending);
+                    return;
+                }
+            }
+
             // Disable OlthoiPlay characters for now. They're not implemented yet.
             // FIXME: Restore OlthoiPlay characters when properly handled.
             if (characterCreateInfo.Heritage == (int)HeritageGroup.Olthoi || characterCreateInfo.Heritage == (int)HeritageGroup.OlthoiAcid)
