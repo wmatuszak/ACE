@@ -1,4 +1,4 @@
-# ACEmulator Core Server
+# ACEmulator Core Server (Classic DAT Support)
 
 [![Discord](https://img.shields.io/discord/261242462972936192.svg?label=play+now!&style=for-the-badge&logo=discord)](https://discord.gg/C2WzhP9)
 
