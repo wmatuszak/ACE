@@ -933,7 +933,17 @@ namespace ACE.Server.WorldObjects
             Skill.Recklessness,
             Skill.SneakAttack,
             Skill.DirtyFighting,
-            Skill.Summoning
+            Skill.Summoning,
+            Skill.Axe,
+            Skill.Dagger,
+            Skill.Mace,
+            Skill.Spear,
+            Skill.Staff,
+            Skill.Sword,
+            Skill.UnarmedCombat,
+            Skill.Bow,
+            Skill.Crossbow,
+            Skill.ThrownWeapon
         };
     }
 }

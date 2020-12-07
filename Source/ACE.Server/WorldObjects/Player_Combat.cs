@@ -68,7 +68,11 @@ namespace ACE.Server.WorldObjects
             if (weapon?.WeaponSkill == null)
                 return GetHighestMeleeSkill();
 
-            var skill = ConvertToMoASkill(weapon.WeaponSkill);
+            Skill skill;
+            if (ConfigManager.Config.Server.DatFilesClassic)
+                skill = weapon.WeaponSkill;
+            else
+                skill = ConvertToMoASkill(weapon.WeaponSkill);
 
             // DualWieldAlternate will be TRUE if *next* attack is offhand
             if (IsDualWieldAttack && !DualWieldAlternate)
